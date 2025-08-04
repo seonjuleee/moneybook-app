@@ -46,7 +46,7 @@ struct MainView: View {
                 .background(Color(.systemGroupedBackground))
                 .cornerRadius(15)
                 .padding(.horizontal)
-                
+                  
                 // 최근 지출 리스트
                 VStack(alignment: .leading, spacing: 12) {
                     HStack {
