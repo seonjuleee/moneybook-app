@@ -4,6 +4,7 @@ struct BudgetMainView: View {
     @State private var selectedMonth = "8월"
     @State private var monthlyExpense = 527189
     @State private var monthlyIncome = 527189
+    @State private var showAddBudget = false
     
     var body: some View {
         NavigationView {
@@ -180,6 +181,7 @@ struct BudgetMainView: View {
                                         Spacer()
                                         Button(action: {
                                             // 추가 액션
+                                            showAddBudget = true
                                         }) {
                                             Image(systemName: "plus")
                                                 .font(.title2)
@@ -200,6 +202,9 @@ struct BudgetMainView: View {
                 }
             }
             .background(Color(UIColor.systemBackground))
+        }
+        .sheet(isPresented: $showAddBudget) {
+            AddBudgetView()
         }
     }
 }
